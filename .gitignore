@@ -1,0 +1,29 @@
+bin/
+obj/
+project.lock.json
+/debug/
+*.nuget.props
+
+# VS auto-generated solution files for project.json solutions
+*.xproj
+*.xproj.user
+*.suo
+
+# VS auto-generated files for csproj files
+*.csproj.user
+
+# Visual Studio IDE directory
+.vs/
+
+# Project Rider IDE files
+.idea.powershell/
+
+# Ignore binaries and symbols
+*.pdb
+*.dll
+
+# default location for produced nuget packages
+/nuget-artifacts
+
+# resgen output
+gen

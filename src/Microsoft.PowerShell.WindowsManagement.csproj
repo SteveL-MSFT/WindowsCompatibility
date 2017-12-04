@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Description>PowerShell Core's Microsoft.PowerShell.Commands.WindowsManagement project</Description>
+    <AssemblyName>Microsoft.PowerShell.WindowsManagement</AssemblyName>
+    <Product>Windows PowerShell Compatibility Pack</Product>
+    <Company>Microsoft Corporation</Company>
+    <Copyright>(c) Microsoft Corporation. All rights reserved.</Copyright>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>signing/visualstudiopublic.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+    <HighEntropyVA>true</HighEntropyVA>
+  </PropertyGroup>
+
+<ItemGroup>
+    <!--Compile Remove="Microsoft.PowerShell.WindowsManagement\ClearRecycleBinCommand.cs" /-->
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\ControlPanelItemCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\CommitTransactionCommand.cs" />
+    <!--Compile Remove="Microsoft.PowerShell.WindowsManagement\Eventlog.cs" /-->
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\GetClipboardCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\Computer.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\CorePsStub.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\GetTransactionCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\TransactionManager.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\GetWMIObjectCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\throttlemanager.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\ExtensionMethods.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\Hotfix.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\InvokeWMIMethodCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\RegisterWMIEventCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\RemoveWMIObjectCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\RollbackTransactionCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\SetClipboardCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\SetWMIInstanceCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\StartTransactionCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\UseTransactionCommand.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\WMIHelper.cs" />
+    <Compile Remove="Microsoft.PowerShell.WindowsManagement\WebServiceProxy.cs" />
+    <!--Compile Remove="singleshell\installer\MshManagementMshSnapin.cs" /-->
+    <!--Compile Remove="gen\EventlogResources.cs" /-->
+    <Compile Remove="gen\TransactionResources.cs" />
+    <Compile Remove="gen\WebServiceResources.cs" />
+    <Compile Remove="gen\HotFixResources.cs" />
+    <Compile Remove="gen\ControlPanelResources.cs" />
+    <Compile Remove="gen\WmiResources.cs" />
+    <!--Compile Remove="gen\ManagementMshSnapInResources.cs" /-->
+    <!--Compile Remove="gen\ClearRecycleBinResources.cs" /-->
+    <Compile Remove="gen\ClipboardResources.cs" />
+
+    <!--EmbeddedResource Remove="resources\EventlogResources.resx" /-->
+    <EmbeddedResource Remove="resources\TransactionResources.resx" />
+    <EmbeddedResource Remove="resources\WebServiceResources.resx" />
+    <EmbeddedResource Remove="resources\HotFixResources.resx" />
+    <EmbeddedResource Remove="resources\ControlPanelResources.resx" />
+    <EmbeddedResource Remove="resources\WmiResources.resx" />
+    <!--EmbeddedResource Remove="resources\ManagementMshSnapInResources.resx" /-->
+    <!--EmbeddedResource Remove="resources\ClearRecycleBinResources.resx" /-->
+    <EmbeddedResource Remove="resources\ClipboardResources.resx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.0-*" />
+    <PackageReference Include="System.Management.Automation.dll" Version="6.0.0">
+      <HintPath>..\..\PowerShell\src\powershell-win-core\bin\Debug\netcoreapp2.0\win7-x64\publish</HintPath>
+      <SpecificVersion>true</SpecificVersion>
+    </PackageReference>
+    <!--PackageReference Include="Microsoft.PowerShell.NanoServer.NetCore.Library" Version="1.0.0" /-->
+    <None Include="Microsoft.PowerShell.WindowsManagement.psd1" CopyToOutputDirectory="Always" />
+    <None Include="*.ps1xml" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
+</Project>
